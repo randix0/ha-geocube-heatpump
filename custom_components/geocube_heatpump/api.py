@@ -41,6 +41,6 @@ class CarelApi:
     async def set_var(self, name: str, value: bool | int | float) -> None:
         if isinstance(value, bool):
             value = int(value)
-        url = URL(f"http://{self.host}/setvar.csv?name={name}={value}", encoded=True)
+        url = URL(f"http://{self.host}/setvar.csv?{name}={value}", encoded=True)
         async with self._session.get(url, timeout=TIMEOUT) as resp:
             resp.raise_for_status()

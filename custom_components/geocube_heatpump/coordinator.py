@@ -20,12 +20,19 @@ class CarelCoordinator(DataUpdateCoordinator):
             hass, _LOGGER, name=DOMAIN, update_interval=timedelta(seconds=scan_interval)
         )
         self.api = api
+        self._missing: set[str] = set()
 
     async def _async_update_data(self):
         try:
-            return await self.api.get_vars(ALL_VARS)
+            data = await self.api.get_vars(ALL_VARS)
         except (ClientError, TimeoutError) as err:
             raise UpdateFailed(f"Помилка зв'язку з контролером: {err}") from err
+
+        missing = set(ALL_VARS) - data.keys()
+        if missing and missing != self._missing:
+            _LOGGER.warning("Контролер не повернув змінні: %s", ", ".join(sorted(missing)))
+        self._missing = missing
+        return data
 
     async def async_set_var(self, name: str, value) -> None:
         await self.api.set_var(name, value)
