@@ -1,0 +1,11 @@
+{
+  "config": {
+    "step": {"user": {"title": "Geocube heat pump", "description": "IP address of the Carel (pCOWeb) controller.", "data": {"host": "IP address"}}},
+    "error": {"cannot_connect": "Cannot connect", "invalid_response": "Unexpected response from controller"},
+    "abort": {"already_configured": "This controller is already configured"}
+  },
+  "options": {
+    "step": {"init": {"data": {"host": "IP address", "scan_interval": "Polling interval (s)"}}},
+    "error": {"cannot_connect": "Cannot connect", "invalid_response": "Unexpected response from controller"}
+  }
+}

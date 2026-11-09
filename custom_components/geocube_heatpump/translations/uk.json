@@ -1,0 +1,11 @@
+{
+  "config": {
+    "step": {"user": {"title": "Geocube тепловий насос", "description": "IP-адреса контролера Carel (pCOWeb).", "data": {"host": "IP-адреса"}}},
+    "error": {"cannot_connect": "Не вдалося підключитися", "invalid_response": "Контролер не повернув очікуваних даних"},
+    "abort": {"already_configured": "Цей контролер уже додано"}
+  },
+  "options": {
+    "step": {"init": {"data": {"host": "IP-адреса", "scan_interval": "Інтервал опитування (с)"}}},
+    "error": {"cannot_connect": "Не вдалося підключитися", "invalid_response": "Контролер не повернув очікуваних даних"}
+  }
+}

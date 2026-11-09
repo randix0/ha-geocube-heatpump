@@ -1,0 +1,12 @@
+{
+  "domain": "geocube_heatpump",
+  "name": "Geocube Heat Pump",
+  "codeowners": ["@YOUR_GITHUB_USER"],
+  "config_flow": true,
+  "documentation": "https://github.com/YOUR_GITHUB_USER/ha-geocube-heatpump",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/YOUR_GITHUB_USER/ha-geocube-heatpump/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
